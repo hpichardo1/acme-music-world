@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const { models: { Song, Track, Artist, Album }} = require('./db');
 
-
+app.use(express.static('public'))
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
 app.get('/', (req, res)=> res.sendFile(path.join(__dirname, 'index.html')));
 
